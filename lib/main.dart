@@ -1,4 +1,4 @@
-import 'package:bookmywarehouse_partner/onboarding/onboardingj.dart';
+import 'package:bookmywarehouse_partner/onboarding/onboarding.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get_navigation/src/root/get_material_app.dart';
 

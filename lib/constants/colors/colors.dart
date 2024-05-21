@@ -6,4 +6,6 @@ class AppColor {
   static Color backgroundColorOne = Color(0xFFF4F6F9);
   static Color fontBlack = Color(0xFF000000);
   static Color fontGrey = Color(0xFF939393);
+  static Color textfieldBackground = Color(0xFFF4F6F9);
+  static Color textRed = Color(0xFFFF6B6B);
 }
