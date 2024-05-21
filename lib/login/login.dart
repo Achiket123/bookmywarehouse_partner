@@ -5,6 +5,9 @@ import 'package:bookmywarehouse_partner/constants/colors/colors.dart';
 import 'package:bookmywarehouse_partner/getx/getx_services.dart';
 import 'package:bookmywarehouse_partner/common/text_common.dart';
 import 'package:bookmywarehouse_partner/login/custom_password_field.dart';
+import 'package:bookmywarehouse_partner/login/divider.dart';
+import 'package:bookmywarehouse_partner/login/login_options.dart';
+import 'package:bookmywarehouse_partner/login/options.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -32,7 +35,7 @@ class _LoginPageState extends State<LoginPage> {
           child: Column(
             children: [
               Padding(
-                padding: EdgeInsets.only(top: height * 0.2),
+                padding: EdgeInsets.only(top: height * 0.18),
                 child: const CommonText(
                   text1: 'Login',
                   text2: 'Hi! Welcome back, nice to see you',
@@ -83,6 +86,23 @@ class _LoginPageState extends State<LoginPage> {
                     print('Validation failed');
                   }
                 },
+              ),
+              SizedBox(
+                height: height * 0.04,
+              ),
+              const Dividers(
+                text: 'or sign in with',
+              ),
+              SizedBox(
+                height: height * 0.03,
+              ),
+              const LoginOptions(),
+              SizedBox(
+                height: height * 0.02,
+              ),
+              const Options(
+                text1: 'Don’t have account?',
+                text2: 'Sign Up',
               ),
             ],
           ),
