@@ -23,31 +23,40 @@ class _CustomPasswordFieldState extends State<CustomPasswordField> {
         Container(
           color: AppColor.textfieldBackground,
           height: height * 0.06,
-          child: Obx(() => TextFormField(
-                controller: servicesController.passwordController.value,
-                cursorHeight: 25,
-                obscureText: isObscure,
-                decoration: InputDecoration(
-                  contentPadding: EdgeInsets.symmetric(
-                    horizontal: width * 0.05,
-                    vertical: 5,
-                  ),
-                  suffixIcon: IconButton(
-                    onPressed: () {
-                      setState(() {
-                        isObscure = !isObscure;
-                      });
-                    },
-                    icon: Icon(
-                      isObscure ? Icons.visibility_off : Icons.visibility,
-                      size: 25,
-                    ),
-                  ),
-                  border: OutlineInputBorder(
-                    borderRadius: BorderRadius.circular(10),
+          child: Obx(
+            () => TextFormField(
+              controller: servicesController.passwordController.value,
+              cursorHeight: 25,
+              obscureText: isObscure,
+              decoration: InputDecoration(
+                contentPadding: EdgeInsets.symmetric(
+                  horizontal: width * 0.05,
+                  vertical: 5,
+                ),
+                suffixIcon: IconButton(
+                  onPressed: () {
+                    setState(() {
+                      isObscure = !isObscure;
+                    });
+                  },
+                  icon: Icon(
+                    isObscure ? Icons.visibility_off : Icons.visibility,
+                    size: 25,
                   ),
                 ),
-              )),
+                border: OutlineInputBorder(
+                  borderRadius: BorderRadius.circular(10),
+                ),
+              ),
+              onChanged: (value) {
+                setState(
+                  () {
+                    servicesController.passwordError.value = " ";
+                  },
+                );
+              },
+            ),
+          ),
         ),
         Obx(
           () => Text(

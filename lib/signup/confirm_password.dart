@@ -3,16 +3,16 @@ import 'package:bookmywarehouse_partner/getx/getx_services.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-class CustomEmailField extends StatefulWidget {
-  const CustomEmailField({super.key});
+class ConfirmPasswordField extends StatefulWidget {
+  const ConfirmPasswordField({super.key});
 
   @override
-  State<CustomEmailField> createState() => _CustomEmailFieldState();
+  State<ConfirmPasswordField> createState() => _ConfirmPasswordFieldState();
 }
 
-class _CustomEmailFieldState extends State<CustomEmailField> {
+class _ConfirmPasswordFieldState extends State<ConfirmPasswordField> {
   AppSevervicesController servicesController = Get.find();
-
+  bool isObscure = true;
   @override
   Widget build(BuildContext context) {
     var height = Get.height;
@@ -25,32 +25,43 @@ class _CustomEmailFieldState extends State<CustomEmailField> {
           height: height * 0.06,
           child: Obx(
             () => TextFormField(
-              controller: servicesController.emailController.value,
-              keyboardType: TextInputType.emailAddress,
+              controller: servicesController.confirmPasswordController.value,
               cursorHeight: 25,
+              obscureText: isObscure,
               decoration: InputDecoration(
                 contentPadding: EdgeInsets.symmetric(
                   horizontal: width * 0.05,
                   vertical: 5,
                 ),
-                hintText: 'example@gmail.com',
-                hintStyle: const TextStyle(fontSize: 15),
+                suffixIcon: IconButton(
+                  onPressed: () {
+                    setState(() {
+                      isObscure = !isObscure;
+                    });
+                  },
+                  icon: Icon(
+                    isObscure ? Icons.visibility_off : Icons.visibility,
+                    size: 25,
+                  ),
+                ),
                 border: OutlineInputBorder(
                   borderRadius: BorderRadius.circular(10),
                 ),
               ),
               onChanged: (value) {
-                setState(() {
-                  servicesController.emailError.value = " ";
-                });
+                setState(
+                  () {
+                    servicesController.confirmPasswordError.value = " ";
+                  },
+                );
               },
             ),
           ),
         ),
         Obx(
           () => Text(
-            servicesController.emailError.value,
-            style: TextStyle(color: Colors.red),
+            servicesController.confirmPasswordError.value,
+            style: const TextStyle(color: Colors.red),
           ),
         ),
       ],

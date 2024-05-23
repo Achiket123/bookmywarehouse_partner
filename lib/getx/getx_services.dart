@@ -5,10 +5,12 @@ class AppSevervicesController extends GetxController {
   final userName = TextEditingController().obs;
   final emailController = TextEditingController().obs;
   final passwordController = TextEditingController().obs;
+  final confirmPasswordController = TextEditingController().obs;
 
   var emailError = ''.obs;
   var passwordError = ''.obs;
-
+  var confirmPasswordError = ''.obs;
+  var nameError = ''.obs;
   bool validateEmail(String email) {
     if (email.isEmpty) {
       emailError.value = 'Email should not be empty';
@@ -40,6 +42,76 @@ class AppSevervicesController extends GetxController {
   bool validateForm() {
     final emailValid = validateEmail(emailController.value.text);
     final passwordValid = validatePassword(passwordController.value.text);
+    return emailValid && passwordValid;
+  }
+
+  bool signupPasswordValidate(
+      String password, String confirmPassword, String name) {
+    if (password.isEmpty && confirmPassword.isEmpty && name.isEmpty) {
+      passwordError.value = 'password could not be empty';
+      confirmPasswordError.value = 'confirm your password';
+      nameError.value = 'Please enter your name';
+
+      return false;
+    }
+    if (password.isNotEmpty && confirmPassword.isNotEmpty && name.isEmpty) {
+      passwordError.value = '';
+      confirmPasswordError.value = '';
+      nameError.value = 'Please enter your name';
+      return false;
+    } else if (password.isNotEmpty &&
+        name.isNotEmpty &&
+        confirmPassword.isEmpty) {
+      passwordError.value = '';
+      confirmPasswordError.value = 'confirm your password';
+      nameError.value = '';
+      return false;
+    } else if (confirmPassword.isNotEmpty &&
+        name.isNotEmpty &&
+        password.isEmpty) {
+      passwordError.value = 'password could not be empty';
+      confirmPasswordError.value = '';
+      nameError.value = '';
+      return false;
+    } else if (confirmPassword.isEmpty && password.isEmpty && name.isNotEmpty) {
+      passwordError.value = 'password could not be empty';
+      confirmPasswordError.value = 'confirm your password';
+      nameError.value = '';
+      return false;
+    } else if (name.isEmpty && password.isEmpty && confirmPassword.isNotEmpty) {
+      passwordError.value = 'password could not be empty';
+      confirmPasswordError.value = '';
+      nameError.value = 'Please enter your name';
+      return false;
+    } else if (name.isEmpty && confirmPassword.isEmpty && password.isNotEmpty) {
+      passwordError.value = '';
+      confirmPasswordError.value = 'confirm your password';
+      nameError.value = 'Please enter your name';
+      return false;
+    }
+    if (password.length >= 6 && confirmPassword.length >= 6) {
+      if (password == confirmPassword) {
+        passwordError.value = '';
+        confirmPasswordError.value = '';
+        return true;
+      } else {
+        confirmPasswordError.value = 'Password does not match';
+        return false;
+      }
+    } else {
+      // passwordError.value = 'Password length should be at least 6 digits';
+      confirmPasswordError.value = 'Password does not match';
+      return false;
+    }
+  }
+
+  bool validateSignupForm() {
+    final emailValid = validateEmail(emailController.value.text);
+    final passwordValid = signupPasswordValidate(
+      passwordController.value.text,
+      confirmPasswordController.value.text,
+      userName.value.text,
+    );
     return emailValid && passwordValid;
   }
 }

@@ -1,4 +1,5 @@
 import 'package:bookmywarehouse_partner/common/button.dart';
+import 'package:bookmywarehouse_partner/location_acess/location_acess.dart';
 import 'package:bookmywarehouse_partner/login/custom_email_field.dart';
 import 'package:bookmywarehouse_partner/common/label_text.dart';
 import 'package:bookmywarehouse_partner/constants/colors/colors.dart';
@@ -8,12 +9,13 @@ import 'package:bookmywarehouse_partner/login/custom_password_field.dart';
 import 'package:bookmywarehouse_partner/login/divider.dart';
 import 'package:bookmywarehouse_partner/login/login_options.dart';
 import 'package:bookmywarehouse_partner/login/options.dart';
+import 'package:bookmywarehouse_partner/signup/signup.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class LoginPage extends StatefulWidget {
-  LoginPage({super.key});
+  const LoginPage({super.key});
 
   @override
   State<LoginPage> createState() => _LoginPageState();
@@ -81,6 +83,7 @@ class _LoginPageState extends State<LoginPage> {
                 callback: () {
                   if (servicesController.validateForm()) {
                     // Perform login action
+                    Get.off(LocationAcess());
                     print('Login successful');
                   } else {
                     print('Validation failed');
@@ -100,9 +103,13 @@ class _LoginPageState extends State<LoginPage> {
               SizedBox(
                 height: height * 0.02,
               ),
-              const Options(
+              Options(
                 text1: 'Don’t have account?',
                 text2: 'Sign Up',
+                callback: () {
+                  Get.off(const SignUpScreen());
+                  print('btn pressed');
+                },
               ),
             ],
           ),

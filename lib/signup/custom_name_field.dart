@@ -3,14 +3,14 @@ import 'package:bookmywarehouse_partner/getx/getx_services.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-class CustomEmailField extends StatefulWidget {
-  const CustomEmailField({super.key});
+class CustomNameField extends StatefulWidget {
+  const CustomNameField({super.key});
 
   @override
-  State<CustomEmailField> createState() => _CustomEmailFieldState();
+  State<CustomNameField> createState() => _CustomNameFieldState();
 }
 
-class _CustomEmailFieldState extends State<CustomEmailField> {
+class _CustomNameFieldState extends State<CustomNameField> {
   AppSevervicesController servicesController = Get.find();
 
   @override
@@ -25,15 +25,15 @@ class _CustomEmailFieldState extends State<CustomEmailField> {
           height: height * 0.06,
           child: Obx(
             () => TextFormField(
-              controller: servicesController.emailController.value,
-              keyboardType: TextInputType.emailAddress,
+              controller: servicesController.userName.value,
+              keyboardType: TextInputType.text,
               cursorHeight: 25,
               decoration: InputDecoration(
                 contentPadding: EdgeInsets.symmetric(
                   horizontal: width * 0.05,
                   vertical: 5,
                 ),
-                hintText: 'example@gmail.com',
+                hintText: 'Jhon Banerjee',
                 hintStyle: const TextStyle(fontSize: 15),
                 border: OutlineInputBorder(
                   borderRadius: BorderRadius.circular(10),
@@ -41,7 +41,7 @@ class _CustomEmailFieldState extends State<CustomEmailField> {
               ),
               onChanged: (value) {
                 setState(() {
-                  servicesController.emailError.value = " ";
+                  servicesController.nameError.value = '';
                 });
               },
             ),
@@ -49,8 +49,8 @@ class _CustomEmailFieldState extends State<CustomEmailField> {
         ),
         Obx(
           () => Text(
-            servicesController.emailError.value,
-            style: TextStyle(color: Colors.red),
+            servicesController.nameError.value,
+            style: const TextStyle(color: Colors.red),
           ),
         ),
       ],
