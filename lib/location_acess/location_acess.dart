@@ -1,4 +1,5 @@
 import 'package:bookmywarehouse_partner/common/button.dart';
+import 'package:bookmywarehouse_partner/compelete_profile/profile.dart';
 import 'package:bookmywarehouse_partner/constants/colors/colors.dart';
 import 'package:bookmywarehouse_partner/constants/styles/styles.dart';
 import 'package:flutter/material.dart';
@@ -69,7 +70,11 @@ class _LocationAcessState extends State<LocationAcess> {
               ),
               SubmitButton(
                 btnText: 'Allow Location Access',
-                callback: () {},
+                callback: () {
+                  Get.off(
+                    CompleteProfile(),
+                  );
+                },
               ),
               SizedBox(
                 height: height * 0.04,
