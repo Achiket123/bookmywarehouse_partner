@@ -1,6 +1,10 @@
+import 'package:bookmywarehouse_partner/common/button.dart';
 import 'package:bookmywarehouse_partner/common/label_text.dart';
+import 'package:bookmywarehouse_partner/compelete_profile/gender_dropdown.dart';
+import 'package:bookmywarehouse_partner/compelete_profile/phone_field.dart';
 import 'package:bookmywarehouse_partner/constants/colors/colors.dart';
 import 'package:bookmywarehouse_partner/constants/styles/styles.dart';
+import 'package:bookmywarehouse_partner/register/register_page_one.dart';
 import 'package:bookmywarehouse_partner/signup/custom_name_field.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -65,12 +69,33 @@ class _CompleteProfileState extends State<CompleteProfile> {
               SizedBox(
                 height: height * 0.02,
               ),
-              LabelText(text: 'Name'),
+              const LabelText(text: 'Name'),
               SizedBox(
                 height: height * 0.01,
               ),
-              CustomNameField(),
-              LabelText(text: 'Gender'),
+              const CustomNameField(),
+              const LabelText(text: 'Gender'),
+              SizedBox(
+                height: height * 0.01,
+              ),
+              const GenderDropDown(),
+              SizedBox(
+                height: height * 0.02,
+              ),
+              const LabelText(text: 'Phone Number'),
+              SizedBox(
+                height: height * 0.01,
+              ),
+              const CustomPhoneField(),
+              SizedBox(
+                height: height * 0.05,
+              ),
+              SubmitButton(
+                btnText: 'Complete Profile',
+                callback: () {
+                  Get.to(RegisterPage());
+                },
+              )
             ],
           ),
         ),

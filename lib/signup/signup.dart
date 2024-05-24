@@ -50,18 +50,18 @@ class _SignUpScreenState extends State<SignUpScreen> {
               Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  LabelText(text: 'Name'),
+                  const LabelText(text: 'Name'),
                   SizedBox(height: height * 0.005),
-                  CustomNameField(),
-                  LabelText(text: 'Email'),
+                  const CustomNameField(),
+                  const LabelText(text: 'Email'),
                   SizedBox(height: height * 0.005),
-                  CustomEmailField(),
-                  LabelText(text: 'Password'),
+                  const CustomEmailField(),
+                  const LabelText(text: 'Password'),
                   SizedBox(height: height * 0.005),
-                  CustomPasswordField(),
-                  LabelText(text: 'Confirm Password'),
+                  const CustomPasswordField(),
+                  const LabelText(text: 'Confirm Password'),
                   SizedBox(height: height * 0.005),
-                  ConfirmPasswordField(),
+                  const ConfirmPasswordField(),
                   SizedBox(height: height * 0.05),
                   SubmitButton(
                     btnText: 'Sign Up',
@@ -91,7 +91,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                     text1: 'Already have an account?',
                     text2: 'Sign In',
                     callback: () {
-                      Get.off(LoginPage());
+                      Get.off(const LoginPage());
                     },
                   ),
                   SizedBox(
