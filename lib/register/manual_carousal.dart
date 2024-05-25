@@ -1,14 +1,14 @@
-import 'package:bookmywarehouse_partner/common/button.dart';
 import 'package:bookmywarehouse_partner/constants/colors/colors.dart';
 import 'package:bookmywarehouse_partner/constants/styles/styles.dart';
 import 'package:bookmywarehouse_partner/register/page_1.dart';
+import 'package:bookmywarehouse_partner/register/page_2.dart';
+import 'package:bookmywarehouse_partner/register/page_3.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:flutter_carousel_widget/flutter_carousel_widget.dart';
 import 'package:get/get.dart';
 
 class ManuallyControlledSlider extends StatefulWidget {
-  const ManuallyControlledSlider({Key? key}) : super(key: key);
+  const ManuallyControlledSlider({super.key});
 
   @override
   State<StatefulWidget> createState() {
@@ -20,13 +20,8 @@ class _ManuallyControlledSliderState extends State<ManuallyControlledSlider> {
   final CarouselController _controller = CarouselController();
   final List<Widget> _pages = [
     PageOne(),
-    Container(
-      color: Colors.green,
-      child: Center(
-        child:
-            Text('Page 2', style: TextStyle(fontSize: 24, color: Colors.white)),
-      ),
-    ),
+    PageTwo(),
+    PageThree(),
     Container(
       color: Colors.orange,
       child: Center(
@@ -39,10 +34,10 @@ class _ManuallyControlledSliderState extends State<ManuallyControlledSlider> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: AppColor.backgroundColor,
-      body: Column(
-        children: [
-          Expanded(
-            child: FlutterCarousel(
+      body: SingleChildScrollView(
+        child: Column(
+          children: [
+            FlutterCarousel(
               items: _pages,
               options: CarouselOptions(
                 initialPage: 0,
@@ -60,22 +55,25 @@ class _ManuallyControlledSliderState extends State<ManuallyControlledSlider> {
                 pauseAutoPlayOnManualNavigate: true,
               ),
             ),
-          ),
-          SizedBox(
-            width: Get.width * 0.9,
-            child: TextButton(
-              style: Styles.buttonStyle,
-              onPressed: _controller.nextPage,
-              child: Text(
-                'CONTINUE',
-                style: Styles.btnStyle,
+            SizedBox(
+              height: Get.height * 0.05,
+            ),
+            SizedBox(
+              width: Get.width * 0.9,
+              child: TextButton(
+                style: Styles.buttonStyle,
+                onPressed: _controller.nextPage,
+                child: Text(
+                  'CONTINUE',
+                  style: Styles.btnStyle,
+                ),
               ),
             ),
-          ),
-          SizedBox(
-            height: Get.height * 0.05,
-          )
-        ],
+            SizedBox(
+              height: Get.height * 0.02,
+            ),
+          ],
+        ),
       ),
     );
   }

@@ -9,11 +9,13 @@ class CustomField extends StatelessWidget {
     required this.text,
     required this.width,
     required this.controller,
+    required this.keyboardInput,
   });
   final Icon icon;
   final String text;
   final double width;
   final TextEditingController controller;
+  final TextInputType keyboardInput;
   @override
   Widget build(BuildContext context) {
     var height = Get.height;
@@ -23,13 +25,15 @@ class CustomField extends StatelessWidget {
       color: AppColor.textfieldBackground,
       child: TextFormField(
         controller: controller,
+        keyboardType: keyboardInput,
         cursorHeight: 20,
         decoration: InputDecoration(
-            prefixIcon: icon,
-            hintText: text,
-            border: OutlineInputBorder(
-              borderRadius: BorderRadius.circular(10),
-            )),
+          prefixIcon: icon,
+          hintText: text,
+          border: OutlineInputBorder(
+            borderRadius: BorderRadius.circular(10),
+          ),
+        ),
       ),
     );
   }

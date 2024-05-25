@@ -53,6 +53,7 @@ class _PageOneState extends State<PageOne> {
                 icon: Icon(Icons.edit),
                 text: 'Enter your name',
                 width: width * 0.9,
+                keyboardInput: TextInputType.name,
               ),
               SizedBox(
                 height: height * 0.02,

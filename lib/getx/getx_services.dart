@@ -6,6 +6,12 @@ class AppSevervicesController extends GetxController {
   final emailController = TextEditingController().obs;
   final passwordController = TextEditingController().obs;
   final confirmPasswordController = TextEditingController().obs;
+  final businesName = TextEditingController().obs;
+  final addressLine1 = TextEditingController().obs;
+  final addressLine2 = TextEditingController().obs;
+  final city = TextEditingController().obs;
+  final state = TextEditingController().obs;
+  final pinCode = TextEditingController().obs;
 
   var emailError = ''.obs;
   var passwordError = ''.obs;
