@@ -41,8 +41,8 @@ class _PageThreeState extends State<PageThree> {
                   horizontal: width * 0.05,
                   vertical: height * 0.02,
                 ),
-                height: height * 0.4,
-                width: width * 0.8,
+                height: height * 0.45,
+                width: width * 0.9,
                 decoration: BoxDecoration(
                   border: Border.all(
                     width: 1,
@@ -53,14 +53,113 @@ class _PageThreeState extends State<PageThree> {
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    LabelText(text: 'Available Warehouse Service’s'),
-                    CustomCheckBox(
-                      text: 'Hello',
-                      width: width * 0.3,
-                    )
+                    const LabelText(text: 'Available Warehouse Service’s'),
+                    SizedBox(
+                      height: height * 0.02,
+                    ),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        CustomCheckBox(
+                          isCheck: false,
+                          text: 'Security',
+                          width: width * 0.35,
+                        ),
+                        CustomCheckBox(
+                          isCheck: false,
+                          text: 'Furnished',
+                          width: width * 0.35,
+                        ),
+                      ],
+                    ),
+                    SizedBox(
+                      height: height * 0.02,
+                    ),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        CustomCheckBox(
+                          isCheck: false,
+                          text: 'Occasion',
+                          width: width * 0.35,
+                        ),
+                        CustomCheckBox(
+                          isCheck: false,
+                          text: 'On Demand',
+                          width: width * 0.35,
+                        ),
+                      ],
+                    ),
+                    SizedBox(
+                      height: height * 0.02,
+                    ),
+                    const LabelText(text: 'Add Ons'),
+                    SizedBox(
+                      height: height * 0.02,
+                    ),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        CustomCheckBox(
+                          isCheck: false,
+                          text: 'Occasion',
+                          width: width * 0.35,
+                        ),
+                        CustomCheckBox(
+                          isCheck: false,
+                          text: 'On Demand',
+                          width: width * 0.35,
+                        ),
+                      ],
+                    ),
+                    SizedBox(
+                      height: height * 0.02,
+                    ),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        CustomCheckBox(
+                          isCheck: false,
+                          text: 'Occasion',
+                          width: width * 0.35,
+                        ),
+                        CustomCheckBox(
+                          isCheck: false,
+                          text: 'On Demand',
+                          width: width * 0.35,
+                        ),
+                      ],
+                    ),
                   ],
                 ),
-              )
+              ),
+              SizedBox(
+                height: height * 0.02,
+              ),
+              CustomCheckBox(
+                text: 'Cleaning Services',
+                width: width * 0.9,
+                isCheck: false,
+              ),
+              SizedBox(
+                height: height * 0.02,
+              ),
+              CustomCheckBox(
+                text: 'Training Services',
+                width: width * 0.9,
+                isCheck: false,
+              ),
+              SizedBox(
+                height: height * 0.02,
+              ),
+              CustomCheckBox(
+                text: 'Photography Services',
+                width: width * 0.9,
+                isCheck: false,
+              ),
+              SizedBox(
+                height: height * 0.02,
+              ),
             ],
           ),
         ),

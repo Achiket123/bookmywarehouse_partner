@@ -3,6 +3,7 @@ import 'package:bookmywarehouse_partner/constants/styles/styles.dart';
 import 'package:bookmywarehouse_partner/register/page_1.dart';
 import 'package:bookmywarehouse_partner/register/page_2.dart';
 import 'package:bookmywarehouse_partner/register/page_3.dart';
+import 'package:bookmywarehouse_partner/register/page_4.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_carousel_widget/flutter_carousel_widget.dart';
 import 'package:get/get.dart';
@@ -22,13 +23,7 @@ class _ManuallyControlledSliderState extends State<ManuallyControlledSlider> {
     PageOne(),
     PageTwo(),
     PageThree(),
-    Container(
-      color: Colors.orange,
-      child: Center(
-        child:
-            Text('Page 3', style: TextStyle(fontSize: 24, color: Colors.white)),
-      ),
-    ),
+    PageFour(),
   ];
   @override
   Widget build(BuildContext context) {
@@ -50,7 +45,7 @@ class _ManuallyControlledSliderState extends State<ManuallyControlledSlider> {
                 pageSnapping: true,
                 slideIndicator: CircularWaveSlideIndicator(
                   indicatorBackgroundColor: AppColor.fontGrey,
-                  currentIndicatorColor: AppColor.fontGrey,
+                  currentIndicatorColor: AppColor.primaryColor,
                 ),
                 pauseAutoPlayOnManualNavigate: true,
               ),

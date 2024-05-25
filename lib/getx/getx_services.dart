@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:image_picker/image_picker.dart';
 
 class AppSevervicesController extends GetxController {
+  var selectedDocument = 0.obs; // Observable to track selected document type
+
   final userName = TextEditingController().obs;
   final emailController = TextEditingController().obs;
   final passwordController = TextEditingController().obs;
@@ -12,11 +15,36 @@ class AppSevervicesController extends GetxController {
   final city = TextEditingController().obs;
   final state = TextEditingController().obs;
   final pinCode = TextEditingController().obs;
+  final aadharController = TextEditingController().obs;
+  final panController = TextEditingController().obs;
 
   var emailError = ''.obs;
   var passwordError = ''.obs;
   var confirmPasswordError = ''.obs;
   var nameError = ''.obs;
+  var selectedImage = Rx<XFile?>(null);
+
+  final ImagePicker _picker = ImagePicker();
+
+  void pickImage() async {
+    final XFile? image = await _picker.pickImage(source: ImageSource.gallery);
+    if (image != null) {
+      selectedImage.value = image;
+    }
+  }
+
+  // Method to get the appropriate controller based on the selected document type
+  TextEditingController get documentController {
+    switch (selectedDocument.value) {
+      case 1:
+        return aadharController.value;
+      case 2:
+        return panController.value;
+      default:
+        return TextEditingController();
+    }
+  }
+
   bool validateEmail(String email) {
     if (email.isEmpty) {
       emailError.value = 'Email should not be empty';
@@ -57,7 +85,6 @@ class AppSevervicesController extends GetxController {
       passwordError.value = 'password could not be empty';
       confirmPasswordError.value = 'confirm your password';
       nameError.value = 'Please enter your name';
-
       return false;
     }
     if (password.isNotEmpty && confirmPassword.isNotEmpty && name.isEmpty) {
