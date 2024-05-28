@@ -26,9 +26,9 @@ class _RegisterPageState extends State<RegisterPage> {
               style: Styles.textStyleNine,
             )),
         automaticallyImplyLeading: false,
-        leading: CustomAppBar(),
+        leading: const CustomAppBar(),
       ),
-      body: ManuallyControlledSlider(),
+      body: const ManuallyControlledSlider(),
     );
   }
 }

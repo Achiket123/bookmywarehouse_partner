@@ -31,20 +31,20 @@ class _PageTwoState extends State<PageTwo> {
             CustomField(
               keyboardInput: TextInputType.text,
               controller: appSevervicesController.businesName.value,
-              icon: Icon(Icons.restaurant_menu_outlined),
+              icon: const Icon(Icons.restaurant_menu_outlined),
               text: 'Enter Business Name(optional)',
               width: width * 0.9,
             ),
             SizedBox(
               height: height * 0.02,
             ),
-            LabelText(text: 'Enter Your Address'),
+            const LabelText(text: 'Enter Your Address'),
             SizedBox(
               height: height * 0.02,
             ),
             CustomField(
               keyboardInput: TextInputType.text,
-              icon: Icon(Icons.home_sharp),
+              icon: const Icon(Icons.home_sharp),
               text: 'Address Line 1',
               width: width * 0.9,
               controller: appSevervicesController.addressLine1.value,
@@ -54,7 +54,7 @@ class _PageTwoState extends State<PageTwo> {
             ),
             CustomField(
               keyboardInput: TextInputType.text,
-              icon: Icon(Icons.home_work),
+              icon: const Icon(Icons.home_work),
               text: 'Address Line 2',
               width: width * 0.9,
               controller: appSevervicesController.addressLine2.value,
@@ -67,14 +67,14 @@ class _PageTwoState extends State<PageTwo> {
               children: [
                 CustomField(
                   keyboardInput: TextInputType.text,
-                  icon: Icon(Icons.location_city),
+                  icon: const Icon(Icons.location_city),
                   text: 'City',
                   width: width * 0.42,
                   controller: appSevervicesController.city.value,
                 ),
                 CustomField(
                   keyboardInput: TextInputType.text,
-                  icon: Icon(Icons.location_city),
+                  icon: const Icon(Icons.location_city),
                   text: 'State',
                   width: width * 0.42,
                   controller: appSevervicesController.state.value,
@@ -86,7 +86,7 @@ class _PageTwoState extends State<PageTwo> {
             ),
             CustomField(
               keyboardInput: TextInputType.number,
-              icon: Icon(Icons.location_city),
+              icon: const Icon(Icons.location_city),
               text: 'Pin',
               width: width * 0.9,
               controller: appSevervicesController.pinCode.value,

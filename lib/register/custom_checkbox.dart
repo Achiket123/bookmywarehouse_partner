@@ -3,6 +3,7 @@ import 'package:bookmywarehouse_partner/constants/styles/styles.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
+// ignore: must_be_immutable
 class CustomCheckBox extends StatefulWidget {
   CustomCheckBox({
     super.key,

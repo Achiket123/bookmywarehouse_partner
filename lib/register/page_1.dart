@@ -50,7 +50,7 @@ class _PageOneState extends State<PageOne> {
               ),
               CustomField(
                 controller: appSevervicesController.userName.value,
-                icon: Icon(Icons.edit),
+                icon: const Icon(Icons.edit),
                 text: 'Enter your name',
                 width: width * 0.9,
                 keyboardInput: TextInputType.name,

@@ -74,4 +74,14 @@ class Styles {
     fontWeight: FontWeight.w400,
     color: AppColor.fontBlack,
   );
+  static TextStyle textStyleEleven = TextStyle(
+    fontSize: 18,
+    fontWeight: FontWeight.w600,
+    color: AppColor.fontBlack,
+  );
+  static TextStyle textStyleTwelve = TextStyle(
+    fontSize: 14,
+    fontWeight: FontWeight.w400,
+    color: AppColor.fontBlack,
+  );
 }
