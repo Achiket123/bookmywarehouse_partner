@@ -25,7 +25,6 @@ class _ManuallyControlledSliderState extends State<ManuallyControlledSlider> {
     const PageTwo(),
     const PageThree(),
     const PageFour(),
-    // VerificationPage(),
   ];
   int _currentIndex = 0;
 

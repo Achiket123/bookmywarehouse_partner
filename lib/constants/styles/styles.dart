@@ -82,6 +82,17 @@ class Styles {
   static TextStyle textStyleTwelve = TextStyle(
     fontSize: 14,
     fontWeight: FontWeight.w400,
+    color: AppColor.primaryColor,
+  );
+  static TextStyle textStyleThirteen = GoogleFonts.inter(
+      textStyle: TextStyle(
+    fontSize: 20,
+    fontWeight: FontWeight.w600,
+    color: AppColor.textRed,
+  ));
+  static TextStyle textStyleFourteen = TextStyle(
+    fontSize: 16,
+    fontWeight: FontWeight.w600,
     color: AppColor.fontBlack,
   );
 }

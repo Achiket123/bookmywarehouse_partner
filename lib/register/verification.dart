@@ -1,6 +1,6 @@
 import 'package:bookmywarehouse_partner/constants/colors/colors.dart';
 import 'package:bookmywarehouse_partner/constants/styles/styles.dart';
-import 'package:bookmywarehouse_partner/homepage/home.dart';
+import 'package:bookmywarehouse_partner/homepage/bottom_navbar.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
@@ -18,12 +18,10 @@ class _VerificationPageState extends State<VerificationPage> {
   void initState() {
     // TODO: implement initState
     super.initState();
-    // Future.delayed(
-    //   Duration(seconds: 2),
-    //   () {
-    //     Get.to(HomePage());
-    //   },
-    // );
+    Future.delayed(
+      Duration(seconds: 2),
+      () => Get.off(BottomNavBarApp()),
+    );
   }
 
   @override
