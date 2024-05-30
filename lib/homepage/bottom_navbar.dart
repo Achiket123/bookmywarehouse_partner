@@ -1,7 +1,5 @@
-// import 'package:bookmywarehouse/widgets/savded_screen.dart';
 import 'package:bookmywarehouse_partner/constants/colors/colors.dart';
 import 'package:bookmywarehouse_partner/earnings/earnings.dart';
-import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 
 class BottomNavBarApp extends StatelessWidget {
@@ -39,7 +37,7 @@ class _BottomNavBarState extends State<BottomNavBar> {
     Container(
       color: Colors.amber,
     ),
-    EarningPage(),
+    const EarningPage(),
   ];
 
   void _onItemTapped(int index) {

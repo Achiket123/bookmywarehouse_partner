@@ -45,7 +45,7 @@ class _ManuallyControlledSliderState extends State<ManuallyControlledSlider> {
   void _onSubmit() {
     // Perform the submit action here
     Get.off(
-      VerificationPage(),
+      const VerificationPage(),
     );
     print('Submit button pressed');
   }

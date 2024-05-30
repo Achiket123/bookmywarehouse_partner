@@ -1,5 +1,3 @@
-import 'dart:ffi';
-
 import 'package:bookmywarehouse_partner/constants/colors/colors.dart';
 import 'package:bookmywarehouse_partner/constants/styles/styles.dart';
 import 'package:bookmywarehouse_partner/earnings/card.dart';
