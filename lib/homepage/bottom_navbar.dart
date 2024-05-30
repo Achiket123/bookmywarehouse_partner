@@ -1,3 +1,5 @@
+import 'package:bookmywarehouse_partner/chat/chatpage.dart';
+import 'package:bookmywarehouse_partner/chat/chatroom.dart';
 import 'package:bookmywarehouse_partner/constants/colors/colors.dart';
 import 'package:bookmywarehouse_partner/earnings/earnings.dart';
 import 'package:flutter/material.dart';
@@ -31,9 +33,7 @@ class _BottomNavBarState extends State<BottomNavBar> {
     Container(
       color: Colors.blue,
     ),
-    Container(
-      color: Colors.purple,
-    ),
+    ChatRoom(),
     Container(
       color: Colors.amber,
     ),

@@ -24,8 +24,8 @@ class Styles {
     color: AppColor.fontBlack,
   );
   static ButtonStyle buttonStyle = ButtonStyle(
-    backgroundColor: MaterialStatePropertyAll(AppColor.primaryColor),
-    padding: const MaterialStatePropertyAll(
+    backgroundColor: WidgetStatePropertyAll(AppColor.primaryColor),
+    padding: const WidgetStatePropertyAll(
       EdgeInsets.symmetric(
         horizontal: 10,
         vertical: 12,
@@ -95,4 +95,12 @@ class Styles {
     fontWeight: FontWeight.w600,
     color: AppColor.fontBlack,
   );
+  static TextStyle textStyleFifteen = GoogleFonts.inter(
+      textStyle: TextStyle(
+    fontSize: 16,
+    fontWeight: FontWeight.w400,
+    decoration: TextDecoration.underline,
+    decorationColor: AppColor.primaryColor,
+    color: AppColor.primaryColor,
+  ));
 }
