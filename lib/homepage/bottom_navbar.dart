@@ -1,4 +1,4 @@
-import 'package:bookmywarehouse_partner/chat/chatpage.dart';
+import 'package:bookmywarehouse_partner/booking/home.dart';
 import 'package:bookmywarehouse_partner/chat/chatroom.dart';
 import 'package:bookmywarehouse_partner/constants/colors/colors.dart';
 import 'package:bookmywarehouse_partner/earnings/earnings.dart';
@@ -27,13 +27,11 @@ class _BottomNavBarState extends State<BottomNavBar> {
   int _selectedIndex = 0;
   bool isSelected = false;
   static final List<Widget> _widgetOptions = <Widget>[
-    Container(
-      color: Colors.red,
-    ),
+    BookingHomePage(),
     Container(
       color: Colors.blue,
     ),
-    ChatRoom(),
+    const ChatRoom(),
     Container(
       color: Colors.amber,
     ),

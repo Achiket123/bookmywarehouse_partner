@@ -1,4 +1,5 @@
 import 'package:bookmywarehouse_partner/chat/chatpage.dart';
+import 'package:bookmywarehouse_partner/common/appbar.dart';
 import 'package:bookmywarehouse_partner/constants/colors/colors.dart';
 import 'package:bookmywarehouse_partner/constants/styles/styles.dart';
 import 'package:flutter/material.dart';
@@ -22,12 +23,7 @@ class _ChatRoomState extends State<ChatRoom> {
       backgroundColor: AppColor.backgroundColorOne,
       appBar: AppBar(
         backgroundColor: AppColor.backgroundColorOne,
-        title: Align(
-            alignment: Alignment.centerRight,
-            child: UserProfileAvatar(
-              avatarUrl: '',
-              radius: 20,
-            )),
+        title: AppBarScreen(),
       ),
       body: SingleChildScrollView(
         child: Column(
