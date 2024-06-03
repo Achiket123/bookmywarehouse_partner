@@ -3,7 +3,7 @@ import 'package:bookmywarehouse_partner/constants/styles/styles.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_chat_ui/flutter_chat_ui.dart';
 import 'package:flutter_chat_types/flutter_chat_types.dart' as types;
-// import 'package:get/get.dart';
+import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 // import 'package:intl/intl.dart'; // Import for formatting timestamps
 
@@ -66,7 +66,7 @@ class _ChatPageState extends State<ChatPage> {
       appBar: AppBar(
           leading: IconButton(
               onPressed: () {
-                // Get.back();
+                Get.back();
               },
               icon: const Icon(
                 Icons.keyboard_arrow_left_sharp,
