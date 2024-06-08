@@ -2,6 +2,7 @@ import 'package:bookmywarehouse_partner/booking/top_tabbar.dart';
 import 'package:bookmywarehouse_partner/chat/chatroom.dart';
 import 'package:bookmywarehouse_partner/constants/colors/colors.dart';
 import 'package:bookmywarehouse_partner/earnings/earnings.dart';
+import 'package:bookmywarehouse_partner/store/warehouse_details.dart';
 import 'package:flutter/material.dart';
 
 class BottomNavBarApp extends StatelessWidget {
@@ -33,9 +34,7 @@ class _BottomNavBarState extends State<BottomNavBar> {
       color: Colors.blue,
     ),
     const ChatRoom(),
-    Container(
-      color: Colors.amber,
-    ),
+    WarehouseDetailsScreen(),
     const EarningPage(),
   ];
 
@@ -69,7 +68,7 @@ class _BottomNavBarState extends State<BottomNavBar> {
               Icons.shopping_bag,
               size: 30,
             ),
-            label: 'Warehouse',
+            label: 'Create Order',
           ),
           const BottomNavigationBarItem(
             icon: Icon(

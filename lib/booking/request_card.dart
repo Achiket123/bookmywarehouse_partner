@@ -1,6 +1,8 @@
+import 'package:bookmywarehouse_partner/booking/subscrioptions_details.dart';
 import 'package:bookmywarehouse_partner/constants/colors/colors.dart';
 import 'package:bookmywarehouse_partner/constants/styles/styles.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:intl/intl.dart';
 
@@ -46,12 +48,12 @@ class BookingCard extends StatelessWidget {
               ),
             ],
           ),
-          Divider(height: 20, thickness: 1),
-          Text(
+          const Divider(height: 20, thickness: 1),
+          const Text(
             'Warehouse Details',
             style: TextStyle(fontWeight: FontWeight.bold),
           ),
-          SizedBox(height: 8),
+          const SizedBox(height: 8),
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
@@ -61,6 +63,7 @@ class BookingCard extends StatelessWidget {
               ),
               GestureDetector(
                 onTap: () {
+                  Get.to(SubscrioptionsDetails());
                   print('store details ');
                 },
                 child: Text(
@@ -74,7 +77,7 @@ class BookingCard extends StatelessWidget {
               ),
             ],
           ),
-          SizedBox(height: 8),
+          const SizedBox(height: 8),
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
@@ -84,10 +87,10 @@ class BookingCard extends StatelessWidget {
                   textStyle: Styles.textStyleTen,
                 ),
               ),
-              Text('3'),
+              const Text('3'),
             ],
           ),
-          Divider(height: 20, thickness: 1),
+          const Divider(height: 20, thickness: 1),
           Row(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
@@ -110,8 +113,8 @@ class BookingCard extends StatelessWidget {
               ),
             ],
           ),
-          Divider(height: 20, thickness: 1),
-          SizedBox(height: 10),
+          const Divider(height: 20, thickness: 1),
+          const SizedBox(height: 10),
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
@@ -119,13 +122,14 @@ class BookingCard extends StatelessWidget {
                 onPressed: () {},
                 style: ElevatedButton.styleFrom(
                   backgroundColor: Colors.white,
-                  side: BorderSide(color: Colors.red),
-                  padding: EdgeInsets.symmetric(horizontal: 20, vertical: 10),
+                  side: const BorderSide(color: Colors.red),
+                  padding:
+                      const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(10),
                   ),
                 ),
-                child: Text(
+                child: const Text(
                   'Reject',
                   style: TextStyle(color: Colors.red),
                 ),
@@ -134,7 +138,8 @@ class BookingCard extends StatelessWidget {
                 onPressed: () {},
                 style: ElevatedButton.styleFrom(
                   backgroundColor: AppColor.primaryColor,
-                  padding: EdgeInsets.symmetric(horizontal: 20, vertical: 10),
+                  padding:
+                      const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(10),
                   ),

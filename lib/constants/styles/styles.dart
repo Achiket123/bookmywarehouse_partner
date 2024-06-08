@@ -103,4 +103,9 @@ class Styles {
     decorationColor: AppColor.primaryColor,
     color: AppColor.primaryColor,
   ));
+  static TextStyle textStyleSixteen = TextStyle(
+    fontSize: 14,
+    fontWeight: FontWeight.w400,
+    color: AppColor.colorBlue,
+  );
 }

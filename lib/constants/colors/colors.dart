@@ -9,4 +9,5 @@ class AppColor {
   static Color textfieldBackground = Color(0xFFF4F6F9);
   static Color textRed = Color(0xFFFF6B6B);
   static Color cardBackground = Color(0xFF9BEFC4);
+  static Color colorBlue = Color(0xFF007BD4);
 }

@@ -1,3 +1,4 @@
+import 'package:bookmywarehouse_partner/booking/view_details_one_time.dart';
 import 'package:bookmywarehouse_partner/constants/colors/colors.dart';
 import 'package:bookmywarehouse_partner/constants/styles/styles.dart';
 import 'package:flutter/material.dart';
@@ -25,6 +26,7 @@ class CustomerCard extends StatelessWidget {
               ),
               InkWell(
                 onTap: () {
+                  Get.to(BookingDetailsScreen());
                   print('view details');
                 },
                 child: Text(
