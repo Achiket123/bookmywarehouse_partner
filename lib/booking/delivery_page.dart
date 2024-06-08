@@ -14,7 +14,7 @@ class _DeliveryPageState extends State<DeliveryPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: AppColor.backgroundColorOne,
-      body: SingleChildScrollView(
+      body: const SingleChildScrollView(
         child: Column(
           children: [
             CustomerCard(),
