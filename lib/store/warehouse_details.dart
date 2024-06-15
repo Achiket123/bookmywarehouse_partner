@@ -235,12 +235,12 @@ class WarehouseListItem extends StatelessWidget {
   final String imageUrl;
 
   const WarehouseListItem({
-    Key? key,
+    super.key,
     required this.title,
     required this.price,
     required this.address,
     required this.imageUrl,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {

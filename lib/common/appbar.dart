@@ -1,4 +1,6 @@
+import 'package:bookmywarehouse_partner/settings/profile.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:user_profile_avatar/user_profile_avatar.dart';
 
 class AppBarScreen extends StatelessWidget {
@@ -11,6 +13,9 @@ class AppBarScreen extends StatelessWidget {
       child: UserProfileAvatar(
         avatarUrl: '',
         radius: 15,
+        onAvatarTap: () {
+          Get.to(ProfileScreen());
+        },
       ),
     );
   }
