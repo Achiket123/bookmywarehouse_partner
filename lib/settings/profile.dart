@@ -1,5 +1,7 @@
 import 'package:bookmywarehouse_partner/constants/colors/colors.dart';
+import 'package:bookmywarehouse_partner/settings/bank_details.dart';
 import 'package:bookmywarehouse_partner/settings/edit.dart';
+import 'package:bookmywarehouse_partner/settings/help.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -202,7 +204,9 @@ class SectionFour extends StatelessWidget {
                 size: 28,
               ),
               text: 'Help',
-              onTap: () {},
+              onTap: () {
+                Get.to(HelpPage());
+              },
             ),
             CustomCard(
               icons: const Icon(
@@ -234,7 +238,9 @@ class SectionFour extends StatelessWidget {
                 size: 28,
               ),
               text: 'Bank Details',
-              onTap: () {},
+              onTap: () {
+                Get.to(BankDetailsPage());
+              },
             ),
           ],
         ),
