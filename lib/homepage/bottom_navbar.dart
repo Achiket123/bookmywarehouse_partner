@@ -30,9 +30,7 @@ class _BottomNavBarState extends State<BottomNavBar> {
   static final List<Widget> _widgetOptions = <Widget>[
     // BookingHomePage(),
     TopTabBars(),
-    Container(
-      color: Colors.blue,
-    ),
+    WarehouseDetailsScreen(),
     const ChatRoom(),
     WarehouseDetailsScreen(),
     const EarningPage(),
